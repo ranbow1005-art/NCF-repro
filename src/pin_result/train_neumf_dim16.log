@@ -1,0 +1,1009 @@
+Range of userId is [0, 55186]
+Range of itemId is [0, 9910]
+Embedding(55187, 16)
+Embedding(9911, 16)
+Embedding(55187, 16)
+Embedding(9911, 16)
+Linear(in_features=32, out_features=64, bias=True)
+Linear(in_features=64, out_features=32, bias=True)
+Linear(in_features=32, out_features=16, bias=True)
+Linear(in_features=16, out_features=8, bias=True)
+Linear(in_features=24, out_features=1, bias=True)
+NeuMF(
+  (embedding_user_mlp): Embedding(55187, 16)
+  (embedding_item_mlp): Embedding(9911, 16)
+  (embedding_user_mf): Embedding(55187, 16)
+  (embedding_item_mf): Embedding(9911, 16)
+  (fc_layers): ModuleList(
+    (0): Linear(in_features=32, out_features=64, bias=True)
+    (1): Linear(in_features=64, out_features=32, bias=True)
+    (2): Linear(in_features=32, out_features=16, bias=True)
+    (3): Linear(in_features=16, out_features=8, bias=True)
+  )
+  (affine_output): Linear(in_features=24, out_features=1, bias=True)
+  (logistic): Sigmoid()
+)
+Embedding(55187, 16)
+Embedding(9911, 16)
+Linear(in_features=32, out_features=64, bias=True)
+Linear(in_features=64, out_features=32, bias=True)
+Linear(in_features=32, out_features=16, bias=True)
+Linear(in_features=16, out_features=8, bias=True)
+Linear(in_features=8, out_features=1, bias=True)
+Embedding(55187, 16)
+Embedding(9911, 16)
+Linear(in_features=16, out_features=1, bias=True)
+Epoch 0 starts !
+--------------------------------------------------------------------------------
+[Training Epoch 0] Batch 0, Loss 0.15383058786392212
+[Training Epoch 0] Batch 250, Loss 0.1681521236896515
+[Training Epoch 0] Batch 500, Loss 0.15917669236660004
+[Training Epoch 0] Batch 750, Loss 0.1371227204799652
+[Training Epoch 0] Batch 1000, Loss 0.1667664498090744
+[Training Epoch 0] Batch 1250, Loss 0.15863493084907532
+[Training Epoch 0] Batch 1500, Loss 0.1537710428237915
+[Training Epoch 0] Batch 1750, Loss 0.1639927476644516
+[Training Epoch 0] Batch 2000, Loss 0.14556606113910675
+[Training Epoch 0] Batch 2250, Loss 0.12247977405786514
+[Training Epoch 0] Batch 2500, Loss 0.1551075577735901
+[Training Epoch 0] Batch 2750, Loss 0.13540562987327576
+[Training Epoch 0] Batch 3000, Loss 0.14346560835838318
+[Training Epoch 0] Batch 3250, Loss 0.14083483815193176
+[Training Epoch 0] Batch 3500, Loss 0.13089218735694885
+[Training Epoch 0] Batch 3750, Loss 0.14367690682411194
+[Training Epoch 0] Batch 4000, Loss 0.1367035061120987
+[Training Epoch 0] Batch 4250, Loss 0.13762211799621582
+[Training Epoch 0] Batch 4500, Loss 0.16546931862831116
+[Training Epoch 0] Batch 4750, Loss 0.16608980298042297
+[Training Epoch 0] Batch 5000, Loss 0.14993882179260254
+[Training Epoch 0] Batch 5250, Loss 0.1635848879814148
+[Training Epoch 0] Batch 5500, Loss 0.1618172824382782
+[Training Epoch 0] Batch 5750, Loss 0.16394495964050293
+[Training Epoch 0] Batch 6000, Loss 0.15186814963817596
+[Training Epoch 0] Batch 6250, Loss 0.14698630571365356
+[Training Epoch 0] Batch 6500, Loss 0.17999643087387085
+[Training Epoch 0] Batch 6750, Loss 0.1463809609413147
+
+  0%|          | 0/5336 [00:00<?, ?it/s]
+ 12%|█▏        | 666/5336 [00:00<00:00, 6652.14it/s]
+ 25%|██▌       | 1334/5336 [00:00<00:00, 6665.05it/s]
+ 38%|███▊      | 2001/5336 [00:00<00:00, 6655.96it/s]
+ 50%|█████     | 2670/5336 [00:00<00:00, 6667.32it/s]
+ 63%|██████▎   | 3337/5336 [00:00<00:00, 6659.49it/s]
+ 75%|███████▌  | 4003/5336 [00:00<00:00, 6631.72it/s]
+ 88%|████████▊ | 4671/5336 [00:00<00:00, 6645.47it/s]
+100%|██████████| 5336/5336 [00:00<00:00, 6642.34it/s]
+100%|██████████| 5336/5336 [00:00<00:00, 6647.41it/s]
+Length of test_users: 55187
+Length of test_items: 55187
+Length of test_preds: 55187
+[Evluating Epoch 0] HR = 0.8723, NDCG = 0.5492
+>>> New best HR = 0.8723 at epoch 0
+Epoch 1 starts !
+--------------------------------------------------------------------------------
+[Training Epoch 1] Batch 0, Loss 0.13902097940444946
+[Training Epoch 1] Batch 250, Loss 0.13208287954330444
+[Training Epoch 1] Batch 500, Loss 0.1301155686378479
+[Training Epoch 1] Batch 750, Loss 0.12429765611886978
+[Training Epoch 1] Batch 1000, Loss 0.14303982257843018
+[Training Epoch 1] Batch 1250, Loss 0.14424780011177063
+[Training Epoch 1] Batch 1500, Loss 0.12917254865169525
+[Training Epoch 1] Batch 1750, Loss 0.16262198984622955
+[Training Epoch 1] Batch 2000, Loss 0.15303435921669006
+[Training Epoch 1] Batch 2250, Loss 0.16138172149658203
+[Training Epoch 1] Batch 2500, Loss 0.1473110020160675
+[Training Epoch 1] Batch 2750, Loss 0.15435528755187988
+[Training Epoch 1] Batch 3000, Loss 0.15068259835243225
+[Training Epoch 1] Batch 3250, Loss 0.13843801617622375
+[Training Epoch 1] Batch 3500, Loss 0.1326533854007721
+[Training Epoch 1] Batch 3750, Loss 0.14584912359714508
+[Training Epoch 1] Batch 4000, Loss 0.1513928472995758
+[Training Epoch 1] Batch 4250, Loss 0.13245920836925507
+[Training Epoch 1] Batch 4500, Loss 0.1432710587978363
+[Training Epoch 1] Batch 4750, Loss 0.1681564450263977
+[Training Epoch 1] Batch 5000, Loss 0.15277644991874695
+[Training Epoch 1] Batch 5250, Loss 0.14805194735527039
+[Training Epoch 1] Batch 5500, Loss 0.13864666223526
+[Training Epoch 1] Batch 5750, Loss 0.14123424887657166
+[Training Epoch 1] Batch 6000, Loss 0.1485128551721573
+[Training Epoch 1] Batch 6250, Loss 0.15363556146621704
+[Training Epoch 1] Batch 6500, Loss 0.16400916874408722
+[Training Epoch 1] Batch 6750, Loss 0.13568122684955597
+
+  0%|          | 0/5336 [00:00<?, ?it/s]
+ 14%|█▍        | 765/5336 [00:00<00:00, 7642.19it/s]
+ 29%|██▉       | 1555/5336 [00:00<00:00, 7791.59it/s]
+ 44%|████▍     | 2346/5336 [00:00<00:00, 7843.36it/s]
+ 59%|█████▉    | 3140/5336 [00:00<00:00, 7879.91it/s]
+ 74%|███████▎  | 3930/5336 [00:00<00:00, 7886.82it/s]
+ 88%|████████▊ | 4719/5336 [00:00<00:00, 5410.27it/s]
+100%|██████████| 5336/5336 [00:00<00:00, 6559.84it/s]
+Length of test_users: 55187
+Length of test_items: 55187
+Length of test_preds: 55187
+[Evluating Epoch 1] HR = 0.8707, NDCG = 0.5495
+>>> No improvement for 1 epoch(s), best HR = 0.8723 (epoch 0)
+Epoch 2 starts !
+--------------------------------------------------------------------------------
+[Training Epoch 2] Batch 0, Loss 0.1166626363992691
+[Training Epoch 2] Batch 250, Loss 0.11458773910999298
+[Training Epoch 2] Batch 500, Loss 0.12240244448184967
+[Training Epoch 2] Batch 750, Loss 0.1234917938709259
+[Training Epoch 2] Batch 1000, Loss 0.12314009666442871
+[Training Epoch 2] Batch 1250, Loss 0.13017211854457855
+[Training Epoch 2] Batch 1500, Loss 0.13955669105052948
+[Training Epoch 2] Batch 1750, Loss 0.11781741678714752
+[Training Epoch 2] Batch 2000, Loss 0.14502573013305664
+[Training Epoch 2] Batch 2250, Loss 0.12827792763710022
+[Training Epoch 2] Batch 2500, Loss 0.13724888861179352
+[Training Epoch 2] Batch 2750, Loss 0.1281861513853073
+[Training Epoch 2] Batch 3000, Loss 0.13181887567043304
+[Training Epoch 2] Batch 3250, Loss 0.15362432599067688
+[Training Epoch 2] Batch 3500, Loss 0.11383222043514252
+[Training Epoch 2] Batch 3750, Loss 0.1310737133026123
+[Training Epoch 2] Batch 4000, Loss 0.15516942739486694
+[Training Epoch 2] Batch 4250, Loss 0.14592130482196808
+[Training Epoch 2] Batch 4500, Loss 0.11647951602935791
+[Training Epoch 2] Batch 4750, Loss 0.15032924711704254
+[Training Epoch 2] Batch 5000, Loss 0.14658187329769135
+[Training Epoch 2] Batch 5250, Loss 0.13522404432296753
+[Training Epoch 2] Batch 5500, Loss 0.14956682920455933
+[Training Epoch 2] Batch 5750, Loss 0.13314735889434814
+[Training Epoch 2] Batch 6000, Loss 0.13748422265052795
+[Training Epoch 2] Batch 6250, Loss 0.1298796385526657
+[Training Epoch 2] Batch 6500, Loss 0.13112381100654602
+[Training Epoch 2] Batch 6750, Loss 0.15049883723258972
+
+  0%|          | 0/5336 [00:00<?, ?it/s]
+ 14%|█▍        | 756/5336 [00:00<00:00, 7557.54it/s]
+ 29%|██▉       | 1537/5336 [00:00<00:00, 7703.84it/s]
+ 43%|████▎     | 2315/5336 [00:00<00:00, 7738.21it/s]
+ 58%|█████▊    | 3101/5336 [00:00<00:00, 7783.03it/s]
+ 73%|███████▎  | 3887/5336 [00:00<00:00, 7807.54it/s]
+ 88%|████████▊ | 4671/5336 [00:00<00:00, 7817.51it/s]
+100%|██████████| 5336/5336 [00:00<00:00, 7793.81it/s]
+Length of test_users: 55187
+Length of test_items: 55187
+Length of test_preds: 55187
+[Evluating Epoch 2] HR = 0.8693, NDCG = 0.5486
+>>> No improvement for 2 epoch(s), best HR = 0.8723 (epoch 0)
+Epoch 3 starts !
+--------------------------------------------------------------------------------
+[Training Epoch 3] Batch 0, Loss 0.13710960745811462
+[Training Epoch 3] Batch 250, Loss 0.1310349404811859
+[Training Epoch 3] Batch 500, Loss 0.127777099609375
+[Training Epoch 3] Batch 750, Loss 0.1501588523387909
+[Training Epoch 3] Batch 1000, Loss 0.15481290221214294
+[Training Epoch 3] Batch 1250, Loss 0.1208893209695816
+[Training Epoch 3] Batch 1500, Loss 0.13583660125732422
+[Training Epoch 3] Batch 1750, Loss 0.12812909483909607
+[Training Epoch 3] Batch 2000, Loss 0.14476940035820007
+[Training Epoch 3] Batch 2250, Loss 0.15059012174606323
+[Training Epoch 3] Batch 2500, Loss 0.14941884577274323
+[Training Epoch 3] Batch 2750, Loss 0.13003009557724
+[Training Epoch 3] Batch 3000, Loss 0.12852996587753296
+[Training Epoch 3] Batch 3250, Loss 0.14179128408432007
+[Training Epoch 3] Batch 3500, Loss 0.13501757383346558
+[Training Epoch 3] Batch 3750, Loss 0.1313730776309967
+[Training Epoch 3] Batch 4000, Loss 0.1344834566116333
+[Training Epoch 3] Batch 4250, Loss 0.13262449204921722
+[Training Epoch 3] Batch 4500, Loss 0.14152821898460388
+[Training Epoch 3] Batch 4750, Loss 0.13116967678070068
+[Training Epoch 3] Batch 5000, Loss 0.1510499268770218
+[Training Epoch 3] Batch 5250, Loss 0.1640520989894867
+[Training Epoch 3] Batch 5500, Loss 0.1438063532114029
+[Training Epoch 3] Batch 5750, Loss 0.1534327119588852
+[Training Epoch 3] Batch 6000, Loss 0.1268025040626526
+[Training Epoch 3] Batch 6250, Loss 0.12453050166368484
+[Training Epoch 3] Batch 6500, Loss 0.145644873380661
+[Training Epoch 3] Batch 6750, Loss 0.14208555221557617
+
+  0%|          | 0/5336 [00:00<?, ?it/s]
+ 14%|█▍        | 756/5336 [00:00<00:00, 7553.54it/s]
+ 29%|██▉       | 1540/5336 [00:00<00:00, 7716.86it/s]
+ 44%|████▎     | 2325/5336 [00:00<00:00, 7776.55it/s]
+ 58%|█████▊    | 3113/5336 [00:00<00:00, 7814.06it/s]
+ 73%|███████▎  | 3903/5336 [00:00<00:00, 7841.61it/s]
+ 88%|████████▊ | 4688/5336 [00:00<00:00, 7844.30it/s]
+100%|██████████| 5336/5336 [00:00<00:00, 7817.77it/s]
+Length of test_users: 55187
+Length of test_items: 55187
+Length of test_preds: 55187
+[Evluating Epoch 3] HR = 0.8662, NDCG = 0.5475
+>>> No improvement for 3 epoch(s), best HR = 0.8723 (epoch 0)
+Epoch 4 starts !
+--------------------------------------------------------------------------------
+[Training Epoch 4] Batch 0, Loss 0.12531912326812744
+[Training Epoch 4] Batch 250, Loss 0.11520752310752869
+[Training Epoch 4] Batch 500, Loss 0.12141571938991547
+[Training Epoch 4] Batch 750, Loss 0.1237979531288147
+[Training Epoch 4] Batch 1000, Loss 0.14473778009414673
+[Training Epoch 4] Batch 1250, Loss 0.12302856147289276
+[Training Epoch 4] Batch 1500, Loss 0.12020225822925568
+[Training Epoch 4] Batch 1750, Loss 0.1228848323225975
+[Training Epoch 4] Batch 2000, Loss 0.13144652545452118
+[Training Epoch 4] Batch 2250, Loss 0.11534595489501953
+[Training Epoch 4] Batch 2500, Loss 0.12862816452980042
+[Training Epoch 4] Batch 2750, Loss 0.1362931877374649
+[Training Epoch 4] Batch 3000, Loss 0.1505521833896637
+[Training Epoch 4] Batch 3250, Loss 0.14952707290649414
+[Training Epoch 4] Batch 3500, Loss 0.12378105521202087
+[Training Epoch 4] Batch 3750, Loss 0.13513557612895966
+[Training Epoch 4] Batch 4000, Loss 0.12316935509443283
+[Training Epoch 4] Batch 4250, Loss 0.13166038691997528
+[Training Epoch 4] Batch 4500, Loss 0.15505868196487427
+[Training Epoch 4] Batch 4750, Loss 0.11383409798145294
+[Training Epoch 4] Batch 5000, Loss 0.14763543009757996
+[Training Epoch 4] Batch 5250, Loss 0.11818965524435043
+[Training Epoch 4] Batch 5500, Loss 0.1331673115491867
+[Training Epoch 4] Batch 5750, Loss 0.12277000397443771
+[Training Epoch 4] Batch 6000, Loss 0.164472758769989
+[Training Epoch 4] Batch 6250, Loss 0.14155325293540955
+[Training Epoch 4] Batch 6500, Loss 0.13796550035476685
+[Training Epoch 4] Batch 6750, Loss 0.13630713522434235
+
+  0%|          | 0/5336 [00:00<?, ?it/s]
+ 14%|█▍        | 760/5336 [00:00<00:00, 7596.95it/s]
+ 29%|██▉       | 1543/5336 [00:00<00:00, 7733.90it/s]
+ 44%|████▎     | 2330/5336 [00:00<00:00, 7795.12it/s]
+ 58%|█████▊    | 3120/5336 [00:00<00:00, 7834.73it/s]
+ 73%|███████▎  | 3909/5336 [00:00<00:00, 7854.24it/s]
+ 88%|████████▊ | 4697/5336 [00:00<00:00, 7861.99it/s]
+100%|██████████| 5336/5336 [00:00<00:00, 7839.58it/s]
+Length of test_users: 55187
+Length of test_items: 55187
+Length of test_preds: 55187
+[Evluating Epoch 4] HR = 0.8648, NDCG = 0.5474
+>>> No improvement for 4 epoch(s), best HR = 0.8723 (epoch 0)
+Epoch 5 starts !
+--------------------------------------------------------------------------------
+[Training Epoch 5] Batch 0, Loss 0.13949419558048248
+[Training Epoch 5] Batch 250, Loss 0.11049555987119675
+[Training Epoch 5] Batch 500, Loss 0.10635319352149963
+[Training Epoch 5] Batch 750, Loss 0.13176728785037994
+[Training Epoch 5] Batch 1000, Loss 0.10958561301231384
+[Training Epoch 5] Batch 1250, Loss 0.09589560329914093
+[Training Epoch 5] Batch 1500, Loss 0.10064689069986343
+[Training Epoch 5] Batch 1750, Loss 0.13276171684265137
+[Training Epoch 5] Batch 2000, Loss 0.13321568071842194
+[Training Epoch 5] Batch 2250, Loss 0.1283666044473648
+[Training Epoch 5] Batch 2500, Loss 0.12148718535900116
+[Training Epoch 5] Batch 2750, Loss 0.13723628222942352
+[Training Epoch 5] Batch 3000, Loss 0.11808054149150848
+[Training Epoch 5] Batch 3250, Loss 0.1119106262922287
+[Training Epoch 5] Batch 3500, Loss 0.13817134499549866
+[Training Epoch 5] Batch 3750, Loss 0.11810953915119171
+[Training Epoch 5] Batch 4000, Loss 0.12446080148220062
+[Training Epoch 5] Batch 4250, Loss 0.12053720653057098
+[Training Epoch 5] Batch 4500, Loss 0.12011709064245224
+[Training Epoch 5] Batch 4750, Loss 0.13195861876010895
+[Training Epoch 5] Batch 5000, Loss 0.11981374025344849
+[Training Epoch 5] Batch 5250, Loss 0.12831243872642517
+[Training Epoch 5] Batch 5500, Loss 0.13373658061027527
+[Training Epoch 5] Batch 5750, Loss 0.11219710111618042
+[Training Epoch 5] Batch 6000, Loss 0.12444750964641571
+[Training Epoch 5] Batch 6250, Loss 0.14671462774276733
+[Training Epoch 5] Batch 6500, Loss 0.12053348124027252
+[Training Epoch 5] Batch 6750, Loss 0.12638148665428162
+
+  0%|          | 0/5336 [00:00<?, ?it/s]
+ 14%|█▍        | 761/5336 [00:00<00:00, 7608.34it/s]
+ 29%|██▉       | 1545/5336 [00:00<00:00, 7741.92it/s]
+ 44%|████▎     | 2334/5336 [00:00<00:00, 7807.95it/s]
+ 59%|█████▊    | 3125/5336 [00:00<00:00, 7845.71it/s]
+ 73%|███████▎  | 3914/5336 [00:00<00:00, 7860.36it/s]
+ 88%|████████▊ | 4704/5336 [00:00<00:00, 7870.54it/s]
+100%|██████████| 5336/5336 [00:00<00:00, 7843.08it/s]
+Length of test_users: 55187
+Length of test_items: 55187
+Length of test_preds: 55187
+[Evluating Epoch 5] HR = 0.8614, NDCG = 0.5445
+>>> No improvement for 5 epoch(s), best HR = 0.8723 (epoch 0)
+Epoch 6 starts !
+--------------------------------------------------------------------------------
+[Training Epoch 6] Batch 0, Loss 0.12303603440523148
+[Training Epoch 6] Batch 250, Loss 0.12984450161457062
+[Training Epoch 6] Batch 500, Loss 0.1256037950515747
+[Training Epoch 6] Batch 750, Loss 0.11619195342063904
+[Training Epoch 6] Batch 1000, Loss 0.10970360040664673
+[Training Epoch 6] Batch 1250, Loss 0.09552132338285446
+[Training Epoch 6] Batch 1500, Loss 0.11797327548265457
+[Training Epoch 6] Batch 1750, Loss 0.13710641860961914
+[Training Epoch 6] Batch 2000, Loss 0.11765626817941666
+[Training Epoch 6] Batch 2250, Loss 0.09688090533018112
+[Training Epoch 6] Batch 2500, Loss 0.13712036609649658
+[Training Epoch 6] Batch 2750, Loss 0.0960984081029892
+[Training Epoch 6] Batch 3000, Loss 0.11512798070907593
+[Training Epoch 6] Batch 3250, Loss 0.11820097267627716
+[Training Epoch 6] Batch 3500, Loss 0.12799112498760223
+[Training Epoch 6] Batch 3750, Loss 0.1034964770078659
+[Training Epoch 6] Batch 4000, Loss 0.1387680470943451
+[Training Epoch 6] Batch 4250, Loss 0.13752034306526184
+[Training Epoch 6] Batch 4500, Loss 0.1143835037946701
+[Training Epoch 6] Batch 4750, Loss 0.1274537742137909
+[Training Epoch 6] Batch 5000, Loss 0.15069478750228882
+[Training Epoch 6] Batch 5250, Loss 0.09576347470283508
+[Training Epoch 6] Batch 5500, Loss 0.137004554271698
+[Training Epoch 6] Batch 5750, Loss 0.13582253456115723
+[Training Epoch 6] Batch 6000, Loss 0.15059520304203033
+[Training Epoch 6] Batch 6250, Loss 0.13818369805812836
+[Training Epoch 6] Batch 6500, Loss 0.1083533763885498
+[Training Epoch 6] Batch 6750, Loss 0.1250269114971161
+
+  0%|          | 0/5336 [00:00<?, ?it/s]
+ 14%|█▍        | 764/5336 [00:00<00:00, 7635.17it/s]
+ 29%|██▉       | 1549/5336 [00:00<00:00, 7760.78it/s]
+ 44%|████▍     | 2340/5336 [00:00<00:00, 7827.85it/s]
+ 59%|█████▊    | 3131/5336 [00:00<00:00, 7857.51it/s]
+ 74%|███████▎  | 3925/5336 [00:00<00:00, 7883.82it/s]
+ 88%|████████▊ | 4721/5336 [00:00<00:00, 7907.45it/s]
+100%|██████████| 5336/5336 [00:00<00:00, 7874.25it/s]
+Length of test_users: 55187
+Length of test_items: 55187
+Length of test_preds: 55187
+[Evluating Epoch 6] HR = 0.8615, NDCG = 0.5450
+>>> No improvement for 6 epoch(s), best HR = 0.8723 (epoch 0)
+Epoch 7 starts !
+--------------------------------------------------------------------------------
+[Training Epoch 7] Batch 0, Loss 0.11931358277797699
+[Training Epoch 7] Batch 250, Loss 0.1075616180896759
+[Training Epoch 7] Batch 500, Loss 0.11531925201416016
+[Training Epoch 7] Batch 750, Loss 0.10047772526741028
+[Training Epoch 7] Batch 1000, Loss 0.12036512792110443
+[Training Epoch 7] Batch 1250, Loss 0.08979684114456177
+[Training Epoch 7] Batch 1500, Loss 0.11269521713256836
+[Training Epoch 7] Batch 1750, Loss 0.11415770649909973
+[Training Epoch 7] Batch 2000, Loss 0.15376856923103333
+[Training Epoch 7] Batch 2250, Loss 0.10563796013593674
+[Training Epoch 7] Batch 2500, Loss 0.10641920566558838
+[Training Epoch 7] Batch 2750, Loss 0.11936680972576141
+[Training Epoch 7] Batch 3000, Loss 0.09815870225429535
+[Training Epoch 7] Batch 3250, Loss 0.12850674986839294
+[Training Epoch 7] Batch 3500, Loss 0.11682548373937607
+[Training Epoch 7] Batch 3750, Loss 0.1291039139032364
+[Training Epoch 7] Batch 4000, Loss 0.12434689700603485
+[Training Epoch 7] Batch 4250, Loss 0.12270437926054001
+[Training Epoch 7] Batch 4500, Loss 0.1218511089682579
+[Training Epoch 7] Batch 4750, Loss 0.1270291954278946
+[Training Epoch 7] Batch 5000, Loss 0.1175733432173729
+[Training Epoch 7] Batch 5250, Loss 0.12324585765600204
+[Training Epoch 7] Batch 5500, Loss 0.12308463454246521
+[Training Epoch 7] Batch 5750, Loss 0.12192288041114807
+[Training Epoch 7] Batch 6000, Loss 0.1240798607468605
+[Training Epoch 7] Batch 6250, Loss 0.1326761692762375
+[Training Epoch 7] Batch 6500, Loss 0.10869516432285309
+[Training Epoch 7] Batch 6750, Loss 0.14744514226913452
+
+  0%|          | 0/5336 [00:00<?, ?it/s]
+ 14%|█▍        | 758/5336 [00:00<00:00, 7575.06it/s]
+ 29%|██▉       | 1536/5336 [00:00<00:00, 7693.46it/s]
+ 43%|████▎     | 2319/5336 [00:00<00:00, 7751.30it/s]
+ 58%|█████▊    | 3102/5336 [00:00<00:00, 7778.77it/s]
+ 73%|███████▎  | 3890/5336 [00:00<00:00, 7813.00it/s]
+ 88%|████████▊ | 4678/5336 [00:00<00:00, 7832.68it/s]
+100%|██████████| 5336/5336 [00:00<00:00, 7800.96it/s]
+Length of test_users: 55187
+Length of test_items: 55187
+Length of test_preds: 55187
+[Evluating Epoch 7] HR = 0.8596, NDCG = 0.5442
+>>> No improvement for 7 epoch(s), best HR = 0.8723 (epoch 0)
+Epoch 8 starts !
+--------------------------------------------------------------------------------
+[Training Epoch 8] Batch 0, Loss 0.0955367237329483
+[Training Epoch 8] Batch 250, Loss 0.119887575507164
+[Training Epoch 8] Batch 500, Loss 0.12692412734031677
+[Training Epoch 8] Batch 750, Loss 0.11469073593616486
+[Training Epoch 8] Batch 1000, Loss 0.11337293684482574
+[Training Epoch 8] Batch 1250, Loss 0.11517971754074097
+[Training Epoch 8] Batch 1500, Loss 0.09941411763429642
+[Training Epoch 8] Batch 1750, Loss 0.13807067275047302
+[Training Epoch 8] Batch 2000, Loss 0.12637877464294434
+[Training Epoch 8] Batch 2250, Loss 0.10444661974906921
+[Training Epoch 8] Batch 2500, Loss 0.12193874269723892
+[Training Epoch 8] Batch 2750, Loss 0.11972758173942566
+[Training Epoch 8] Batch 3000, Loss 0.14790025353431702
+[Training Epoch 8] Batch 3250, Loss 0.11818451434373856
+[Training Epoch 8] Batch 3500, Loss 0.10548987984657288
+[Training Epoch 8] Batch 3750, Loss 0.12624627351760864
+[Training Epoch 8] Batch 4000, Loss 0.12874415516853333
+[Training Epoch 8] Batch 4250, Loss 0.10618549585342407
+[Training Epoch 8] Batch 4500, Loss 0.12392596900463104
+[Training Epoch 8] Batch 4750, Loss 0.14279401302337646
+[Training Epoch 8] Batch 5000, Loss 0.15066993236541748
+[Training Epoch 8] Batch 5250, Loss 0.12089882791042328
+[Training Epoch 8] Batch 5500, Loss 0.11095218360424042
+[Training Epoch 8] Batch 5750, Loss 0.1012410968542099
+[Training Epoch 8] Batch 6000, Loss 0.11138412356376648
+[Training Epoch 8] Batch 6250, Loss 0.12022267282009125
+[Training Epoch 8] Batch 6500, Loss 0.15200316905975342
+[Training Epoch 8] Batch 6750, Loss 0.11768314242362976
+
+  0%|          | 0/5336 [00:00<?, ?it/s]
+ 14%|█▍        | 755/5336 [00:00<00:00, 7546.34it/s]
+ 29%|██▉       | 1538/5336 [00:00<00:00, 7708.48it/s]
+ 44%|████▎     | 2322/5336 [00:00<00:00, 7766.25it/s]
+ 58%|█████▊    | 3109/5336 [00:00<00:00, 7805.16it/s]
+ 73%|███████▎  | 3894/5336 [00:00<00:00, 7818.47it/s]
+ 88%|████████▊ | 4678/5336 [00:00<00:00, 7824.91it/s]
+100%|██████████| 5336/5336 [00:00<00:00, 7795.61it/s]
+Length of test_users: 55187
+Length of test_items: 55187
+Length of test_preds: 55187
+[Evluating Epoch 8] HR = 0.8560, NDCG = 0.5427
+>>> No improvement for 8 epoch(s), best HR = 0.8723 (epoch 0)
+Epoch 9 starts !
+--------------------------------------------------------------------------------
+[Training Epoch 9] Batch 0, Loss 0.11579044163227081
+[Training Epoch 9] Batch 250, Loss 0.10976015031337738
+[Training Epoch 9] Batch 500, Loss 0.08200879395008087
+[Training Epoch 9] Batch 750, Loss 0.12810847163200378
+[Training Epoch 9] Batch 1000, Loss 0.10714048147201538
+[Training Epoch 9] Batch 1250, Loss 0.11327487230300903
+[Training Epoch 9] Batch 1500, Loss 0.11900918185710907
+[Training Epoch 9] Batch 1750, Loss 0.10976934432983398
+[Training Epoch 9] Batch 2000, Loss 0.12033776193857193
+[Training Epoch 9] Batch 2250, Loss 0.11715937405824661
+[Training Epoch 9] Batch 2500, Loss 0.13013340532779694
+[Training Epoch 9] Batch 2750, Loss 0.10207182168960571
+[Training Epoch 9] Batch 3000, Loss 0.11381114274263382
+[Training Epoch 9] Batch 3250, Loss 0.12755286693572998
+[Training Epoch 9] Batch 3500, Loss 0.11836005002260208
+[Training Epoch 9] Batch 3750, Loss 0.11547046899795532
+[Training Epoch 9] Batch 4000, Loss 0.10939346998929977
+[Training Epoch 9] Batch 4250, Loss 0.10838168859481812
+[Training Epoch 9] Batch 4500, Loss 0.1366451233625412
+[Training Epoch 9] Batch 4750, Loss 0.13652199506759644
+[Training Epoch 9] Batch 5000, Loss 0.11762116849422455
+[Training Epoch 9] Batch 5250, Loss 0.12843795120716095
+[Training Epoch 9] Batch 5500, Loss 0.12583249807357788
+[Training Epoch 9] Batch 5750, Loss 0.10481692850589752
+[Training Epoch 9] Batch 6000, Loss 0.1163802444934845
+[Training Epoch 9] Batch 6250, Loss 0.14806631207466125
+[Training Epoch 9] Batch 6500, Loss 0.13017025589942932
+[Training Epoch 9] Batch 6750, Loss 0.11238241195678711
+
+  0%|          | 0/5336 [00:00<?, ?it/s]
+ 14%|█▍        | 759/5336 [00:00<00:00, 7588.81it/s]
+ 29%|██▉       | 1541/5336 [00:00<00:00, 7719.51it/s]
+ 44%|████▎     | 2325/5336 [00:00<00:00, 7773.66it/s]
+ 58%|█████▊    | 3111/5336 [00:00<00:00, 7804.23it/s]
+ 73%|███████▎  | 3897/5336 [00:00<00:00, 7823.05it/s]
+ 88%|████████▊ | 4685/5336 [00:00<00:00, 7839.92it/s]
+100%|██████████| 5336/5336 [00:00<00:00, 7810.33it/s]
+Length of test_users: 55187
+Length of test_items: 55187
+Length of test_preds: 55187
+[Evluating Epoch 9] HR = 0.8543, NDCG = 0.5420
+>>> No improvement for 9 epoch(s), best HR = 0.8723 (epoch 0)
+Epoch 10 starts !
+--------------------------------------------------------------------------------
+[Training Epoch 10] Batch 0, Loss 0.11499656736850739
+[Training Epoch 10] Batch 250, Loss 0.11443421989679337
+[Training Epoch 10] Batch 500, Loss 0.12115375697612762
+[Training Epoch 10] Batch 750, Loss 0.11673571169376373
+[Training Epoch 10] Batch 1000, Loss 0.09697294235229492
+[Training Epoch 10] Batch 1250, Loss 0.09683673083782196
+[Training Epoch 10] Batch 1500, Loss 0.1072564423084259
+[Training Epoch 10] Batch 1750, Loss 0.1081634908914566
+[Training Epoch 10] Batch 2000, Loss 0.10334932059049606
+[Training Epoch 10] Batch 2250, Loss 0.12168949842453003
+[Training Epoch 10] Batch 2500, Loss 0.10771254450082779
+[Training Epoch 10] Batch 2750, Loss 0.10290662944316864
+[Training Epoch 10] Batch 3000, Loss 0.10060388594865799
+[Training Epoch 10] Batch 3250, Loss 0.10683353245258331
+[Training Epoch 10] Batch 3500, Loss 0.11138753592967987
+[Training Epoch 10] Batch 3750, Loss 0.12061449885368347
+[Training Epoch 10] Batch 4000, Loss 0.11376231163740158
+[Training Epoch 10] Batch 4250, Loss 0.1209162026643753
+[Training Epoch 10] Batch 4500, Loss 0.12780487537384033
+[Training Epoch 10] Batch 4750, Loss 0.112764373421669
+[Training Epoch 10] Batch 5000, Loss 0.1235077902674675
+[Training Epoch 10] Batch 5250, Loss 0.1261652112007141
+[Training Epoch 10] Batch 5500, Loss 0.1244933232665062
+[Training Epoch 10] Batch 5750, Loss 0.1447693407535553
+[Training Epoch 10] Batch 6000, Loss 0.12581473588943481
+[Training Epoch 10] Batch 6250, Loss 0.1260361224412918
+[Training Epoch 10] Batch 6500, Loss 0.11971628665924072
+[Training Epoch 10] Batch 6750, Loss 0.11103752255439758
+
+  0%|          | 0/5336 [00:00<?, ?it/s]
+ 14%|█▍        | 768/5336 [00:00<00:00, 7678.76it/s]
+ 29%|██▉       | 1557/5336 [00:00<00:00, 7797.77it/s]
+ 44%|████▍     | 2350/5336 [00:00<00:00, 7853.97it/s]
+ 59%|█████▉    | 3144/5336 [00:00<00:00, 7886.03it/s]
+ 74%|███████▍  | 3939/5336 [00:00<00:00, 7906.52it/s]
+ 89%|████████▊ | 4730/5336 [00:00<00:00, 7898.18it/s]
+100%|██████████| 5336/5336 [00:00<00:00, 7877.17it/s]
+Length of test_users: 55187
+Length of test_items: 55187
+Length of test_preds: 55187
+[Evluating Epoch 10] HR = 0.8512, NDCG = 0.5391
+>>> No improvement for 10 epoch(s), best HR = 0.8723 (epoch 0)
+Epoch 11 starts !
+--------------------------------------------------------------------------------
+[Training Epoch 11] Batch 0, Loss 0.09832242131233215
+[Training Epoch 11] Batch 250, Loss 0.12116995453834534
+[Training Epoch 11] Batch 500, Loss 0.10598042607307434
+[Training Epoch 11] Batch 750, Loss 0.08891661465167999
+[Training Epoch 11] Batch 1000, Loss 0.10556253790855408
+[Training Epoch 11] Batch 1250, Loss 0.11798402667045593
+[Training Epoch 11] Batch 1500, Loss 0.09682057797908783
+[Training Epoch 11] Batch 1750, Loss 0.1251351535320282
+[Training Epoch 11] Batch 2000, Loss 0.12167210876941681
+[Training Epoch 11] Batch 2250, Loss 0.11692816019058228
+[Training Epoch 11] Batch 2500, Loss 0.10918541252613068
+[Training Epoch 11] Batch 2750, Loss 0.12337944656610489
+[Training Epoch 11] Batch 3000, Loss 0.09761268645524979
+[Training Epoch 11] Batch 3250, Loss 0.08538755029439926
+[Training Epoch 11] Batch 3500, Loss 0.12127725780010223
+[Training Epoch 11] Batch 3750, Loss 0.12066882848739624
+[Training Epoch 11] Batch 4000, Loss 0.11849483102560043
+[Training Epoch 11] Batch 4250, Loss 0.10916125774383545
+[Training Epoch 11] Batch 4500, Loss 0.12236688286066055
+[Training Epoch 11] Batch 4750, Loss 0.1352304220199585
+[Training Epoch 11] Batch 5000, Loss 0.10791018605232239
+[Training Epoch 11] Batch 5250, Loss 0.12458956241607666
+[Training Epoch 11] Batch 5500, Loss 0.1287933886051178
+[Training Epoch 11] Batch 5750, Loss 0.11530644446611404
+[Training Epoch 11] Batch 6000, Loss 0.12977159023284912
+[Training Epoch 11] Batch 6250, Loss 0.1146768182516098
+[Training Epoch 11] Batch 6500, Loss 0.12251187860965729
+[Training Epoch 11] Batch 6750, Loss 0.10716012865304947
+
+  0%|          | 0/5336 [00:00<?, ?it/s]
+ 14%|█▍        | 759/5336 [00:00<00:00, 7584.26it/s]
+ 29%|██▉       | 1545/5336 [00:00<00:00, 7742.96it/s]
+ 44%|████▎     | 2330/5336 [00:00<00:00, 7791.23it/s]
+ 58%|█████▊    | 3117/5336 [00:00<00:00, 7820.51it/s]
+ 73%|███████▎  | 3906/5336 [00:00<00:00, 7842.70it/s]
+ 88%|████████▊ | 4692/5336 [00:00<00:00, 7846.61it/s]
+100%|██████████| 5336/5336 [00:00<00:00, 7819.40it/s]
+Length of test_users: 55187
+Length of test_items: 55187
+Length of test_preds: 55187
+[Evluating Epoch 11] HR = 0.8515, NDCG = 0.5399
+>>> No improvement for 11 epoch(s), best HR = 0.8723 (epoch 0)
+Epoch 12 starts !
+--------------------------------------------------------------------------------
+[Training Epoch 12] Batch 0, Loss 0.09740780293941498
+[Training Epoch 12] Batch 250, Loss 0.10996906459331512
+[Training Epoch 12] Batch 500, Loss 0.13792210817337036
+[Training Epoch 12] Batch 750, Loss 0.0940622016787529
+[Training Epoch 12] Batch 1000, Loss 0.10351073741912842
+[Training Epoch 12] Batch 1250, Loss 0.10927282273769379
+[Training Epoch 12] Batch 1500, Loss 0.1026667058467865
+[Training Epoch 12] Batch 1750, Loss 0.09051608294248581
+[Training Epoch 12] Batch 2000, Loss 0.13200387358665466
+[Training Epoch 12] Batch 2250, Loss 0.09544802457094193
+[Training Epoch 12] Batch 2500, Loss 0.07877597212791443
+[Training Epoch 12] Batch 2750, Loss 0.115594282746315
+[Training Epoch 12] Batch 3000, Loss 0.11994636058807373
+[Training Epoch 12] Batch 3250, Loss 0.11071977019309998
+[Training Epoch 12] Batch 3500, Loss 0.1135520488023758
+[Training Epoch 12] Batch 3750, Loss 0.09876669943332672
+[Training Epoch 12] Batch 4000, Loss 0.13019652664661407
+[Training Epoch 12] Batch 4250, Loss 0.1058989018201828
+[Training Epoch 12] Batch 4500, Loss 0.1207198053598404
+[Training Epoch 12] Batch 4750, Loss 0.11496229469776154
+[Training Epoch 12] Batch 5000, Loss 0.12300827354192734
+[Training Epoch 12] Batch 5250, Loss 0.10891832411289215
+[Training Epoch 12] Batch 5500, Loss 0.1324102282524109
+[Training Epoch 12] Batch 5750, Loss 0.11204714328050613
+[Training Epoch 12] Batch 6000, Loss 0.10284586995840073
+[Training Epoch 12] Batch 6250, Loss 0.10672323405742645
+[Training Epoch 12] Batch 6500, Loss 0.12121430039405823
+[Training Epoch 12] Batch 6750, Loss 0.13130465149879456
+
+  0%|          | 0/5336 [00:00<?, ?it/s]
+ 14%|█▍        | 762/5336 [00:00<00:00, 7612.48it/s]
+ 29%|██▊       | 1524/5336 [00:00<00:00, 4311.77it/s]
+ 43%|████▎     | 2308/5336 [00:00<00:00, 5447.10it/s]
+ 58%|█████▊    | 3098/5336 [00:00<00:00, 6219.30it/s]
+ 73%|███████▎  | 3887/5336 [00:00<00:00, 6736.83it/s]
+ 88%|████████▊ | 4678/5336 [00:00<00:00, 7094.88it/s]
+100%|██████████| 5336/5336 [00:00<00:00, 6554.11it/s]
+Length of test_users: 55187
+Length of test_items: 55187
+Length of test_preds: 55187
+[Evluating Epoch 12] HR = 0.8518, NDCG = 0.5404
+>>> No improvement for 12 epoch(s), best HR = 0.8723 (epoch 0)
+Epoch 13 starts !
+--------------------------------------------------------------------------------
+[Training Epoch 13] Batch 0, Loss 0.0819997787475586
+[Training Epoch 13] Batch 250, Loss 0.09764575958251953
+[Training Epoch 13] Batch 500, Loss 0.10260362178087234
+[Training Epoch 13] Batch 750, Loss 0.11122161149978638
+[Training Epoch 13] Batch 1000, Loss 0.11554138362407684
+[Training Epoch 13] Batch 1250, Loss 0.12448947131633759
+[Training Epoch 13] Batch 1500, Loss 0.09612678736448288
+[Training Epoch 13] Batch 1750, Loss 0.12554219365119934
+[Training Epoch 13] Batch 2000, Loss 0.12061268836259842
+[Training Epoch 13] Batch 2250, Loss 0.11148260533809662
+[Training Epoch 13] Batch 2500, Loss 0.11762319505214691
+[Training Epoch 13] Batch 2750, Loss 0.12139657139778137
+[Training Epoch 13] Batch 3000, Loss 0.10954603552818298
+[Training Epoch 13] Batch 3250, Loss 0.12649579346179962
+[Training Epoch 13] Batch 3500, Loss 0.10000807046890259
+[Training Epoch 13] Batch 3750, Loss 0.10562723875045776
+[Training Epoch 13] Batch 4000, Loss 0.12030290067195892
+[Training Epoch 13] Batch 4250, Loss 0.10771910846233368
+[Training Epoch 13] Batch 4500, Loss 0.11114028096199036
+[Training Epoch 13] Batch 4750, Loss 0.11975310742855072
+[Training Epoch 13] Batch 5000, Loss 0.11714161932468414
+[Training Epoch 13] Batch 5250, Loss 0.14409330487251282
+[Training Epoch 13] Batch 5500, Loss 0.13910707831382751
+[Training Epoch 13] Batch 5750, Loss 0.13448655605316162
+[Training Epoch 13] Batch 6000, Loss 0.12143121659755707
+[Training Epoch 13] Batch 6250, Loss 0.11950067430734634
+[Training Epoch 13] Batch 6500, Loss 0.12132478505373001
+[Training Epoch 13] Batch 6750, Loss 0.1263616681098938
+
+  0%|          | 0/5336 [00:00<?, ?it/s]
+ 14%|█▍        | 761/5336 [00:00<00:00, 7600.66it/s]
+ 29%|██▉       | 1547/5336 [00:00<00:00, 7747.46it/s]
+ 44%|████▎     | 2334/5336 [00:00<00:00, 7802.64it/s]
+ 58%|█████▊    | 3121/5336 [00:00<00:00, 7827.99it/s]
+ 73%|███████▎  | 3912/5336 [00:00<00:00, 7854.69it/s]
+ 88%|████████▊ | 4701/5336 [00:00<00:00, 7865.08it/s]
+100%|██████████| 5336/5336 [00:00<00:00, 7836.77it/s]
+Length of test_users: 55187
+Length of test_items: 55187
+Length of test_preds: 55187
+[Evluating Epoch 13] HR = 0.8488, NDCG = 0.5388
+>>> No improvement for 13 epoch(s), best HR = 0.8723 (epoch 0)
+Epoch 14 starts !
+--------------------------------------------------------------------------------
+[Training Epoch 14] Batch 0, Loss 0.10756312310695648
+[Training Epoch 14] Batch 250, Loss 0.09752517193555832
+[Training Epoch 14] Batch 500, Loss 0.074213407933712
+[Training Epoch 14] Batch 750, Loss 0.101283498108387
+[Training Epoch 14] Batch 1000, Loss 0.10389210283756256
+[Training Epoch 14] Batch 1250, Loss 0.10281620174646378
+[Training Epoch 14] Batch 1500, Loss 0.12235648930072784
+[Training Epoch 14] Batch 1750, Loss 0.09506294876337051
+[Training Epoch 14] Batch 2000, Loss 0.10139245539903641
+[Training Epoch 14] Batch 2250, Loss 0.1215178519487381
+[Training Epoch 14] Batch 2500, Loss 0.09762753546237946
+[Training Epoch 14] Batch 2750, Loss 0.08444055914878845
+[Training Epoch 14] Batch 3000, Loss 0.09050430357456207
+[Training Epoch 14] Batch 3250, Loss 0.11192330718040466
+[Training Epoch 14] Batch 3500, Loss 0.0890984833240509
+[Training Epoch 14] Batch 3750, Loss 0.11339683085680008
+[Training Epoch 14] Batch 4000, Loss 0.12975776195526123
+[Training Epoch 14] Batch 4250, Loss 0.09896579384803772
+[Training Epoch 14] Batch 4500, Loss 0.1228318065404892
+[Training Epoch 14] Batch 4750, Loss 0.10443342477083206
+[Training Epoch 14] Batch 5000, Loss 0.123896524310112
+[Training Epoch 14] Batch 5250, Loss 0.10041489452123642
+[Training Epoch 14] Batch 5500, Loss 0.10207408666610718
+[Training Epoch 14] Batch 5750, Loss 0.1288875937461853
+[Training Epoch 14] Batch 6000, Loss 0.12966006994247437
+[Training Epoch 14] Batch 6250, Loss 0.12232321500778198
+[Training Epoch 14] Batch 6500, Loss 0.11630158871412277
+[Training Epoch 14] Batch 6750, Loss 0.13168682157993317
+
+  0%|          | 0/5336 [00:00<?, ?it/s]
+ 14%|█▍        | 753/5336 [00:00<00:00, 7525.00it/s]
+ 29%|██▊       | 1533/5336 [00:00<00:00, 7684.95it/s]
+ 43%|████▎     | 2313/5336 [00:00<00:00, 7736.32it/s]
+ 58%|█████▊    | 3093/5336 [00:00<00:00, 7759.15it/s]
+ 73%|███████▎  | 3875/5336 [00:00<00:00, 7778.47it/s]
+ 87%|████████▋ | 4656/5336 [00:00<00:00, 7786.51it/s]
+100%|██████████| 5336/5336 [00:00<00:00, 7762.42it/s]
+Length of test_users: 55187
+Length of test_items: 55187
+Length of test_preds: 55187
+[Evluating Epoch 14] HR = 0.8479, NDCG = 0.5379
+>>> No improvement for 14 epoch(s), best HR = 0.8723 (epoch 0)
+Epoch 15 starts !
+--------------------------------------------------------------------------------
+[Training Epoch 15] Batch 0, Loss 0.09617642313241959
+[Training Epoch 15] Batch 250, Loss 0.10090288519859314
+[Training Epoch 15] Batch 500, Loss 0.07718749344348907
+[Training Epoch 15] Batch 750, Loss 0.09453830122947693
+[Training Epoch 15] Batch 1000, Loss 0.09041228890419006
+[Training Epoch 15] Batch 1250, Loss 0.11188003420829773
+[Training Epoch 15] Batch 1500, Loss 0.10290907323360443
+[Training Epoch 15] Batch 1750, Loss 0.10594674944877625
+[Training Epoch 15] Batch 2000, Loss 0.12127108871936798
+[Training Epoch 15] Batch 2250, Loss 0.10206735879182816
+[Training Epoch 15] Batch 2500, Loss 0.10553169250488281
+[Training Epoch 15] Batch 2750, Loss 0.12241387367248535
+[Training Epoch 15] Batch 3000, Loss 0.1121353954076767
+[Training Epoch 15] Batch 3250, Loss 0.09403614699840546
+[Training Epoch 15] Batch 3500, Loss 0.11492564529180527
+[Training Epoch 15] Batch 3750, Loss 0.10292936116456985
+[Training Epoch 15] Batch 4000, Loss 0.1143229752779007
+[Training Epoch 15] Batch 4250, Loss 0.1160949245095253
+[Training Epoch 15] Batch 4500, Loss 0.10715168714523315
+[Training Epoch 15] Batch 4750, Loss 0.12584218382835388
+[Training Epoch 15] Batch 5000, Loss 0.09971316903829575
+[Training Epoch 15] Batch 5250, Loss 0.1026371419429779
+[Training Epoch 15] Batch 5500, Loss 0.10722813010215759
+[Training Epoch 15] Batch 5750, Loss 0.1280437409877777
+[Training Epoch 15] Batch 6000, Loss 0.11007896065711975
+[Training Epoch 15] Batch 6250, Loss 0.13440097868442535
+[Training Epoch 15] Batch 6500, Loss 0.11674214899539948
+[Training Epoch 15] Batch 6750, Loss 0.12238258123397827
+
+  0%|          | 0/5336 [00:00<?, ?it/s]
+ 14%|█▍        | 771/5336 [00:00<00:00, 7706.00it/s]
+ 29%|██▉       | 1560/5336 [00:00<00:00, 7813.86it/s]
+ 44%|████▍     | 2351/5336 [00:00<00:00, 7856.10it/s]
+ 59%|█████▉    | 3143/5336 [00:00<00:00, 7879.45it/s]
+ 74%|███████▍  | 3936/5336 [00:00<00:00, 7897.16it/s]
+ 89%|████████▊ | 4727/5336 [00:00<00:00, 7900.98it/s]
+100%|██████████| 5336/5336 [00:00<00:00, 7878.56it/s]
+Length of test_users: 55187
+Length of test_items: 55187
+Length of test_preds: 55187
+[Evluating Epoch 15] HR = 0.8475, NDCG = 0.5377
+>>> No improvement for 15 epoch(s), best HR = 0.8723 (epoch 0)
+Epoch 16 starts !
+--------------------------------------------------------------------------------
+[Training Epoch 16] Batch 0, Loss 0.11310350149869919
+[Training Epoch 16] Batch 250, Loss 0.09966347366571426
+[Training Epoch 16] Batch 500, Loss 0.09054450690746307
+[Training Epoch 16] Batch 750, Loss 0.10049295425415039
+[Training Epoch 16] Batch 1000, Loss 0.10397888720035553
+[Training Epoch 16] Batch 1250, Loss 0.09970343112945557
+[Training Epoch 16] Batch 1500, Loss 0.09904162585735321
+[Training Epoch 16] Batch 1750, Loss 0.11926446110010147
+[Training Epoch 16] Batch 2000, Loss 0.12921731173992157
+[Training Epoch 16] Batch 2250, Loss 0.10054546594619751
+[Training Epoch 16] Batch 2500, Loss 0.08514082431793213
+[Training Epoch 16] Batch 2750, Loss 0.12373030185699463
+[Training Epoch 16] Batch 3000, Loss 0.11597596108913422
+[Training Epoch 16] Batch 3250, Loss 0.12030555307865143
+[Training Epoch 16] Batch 3500, Loss 0.11898253858089447
+[Training Epoch 16] Batch 3750, Loss 0.12248319387435913
+[Training Epoch 16] Batch 4000, Loss 0.10970646142959595
+[Training Epoch 16] Batch 4250, Loss 0.12700439989566803
+[Training Epoch 16] Batch 4500, Loss 0.1469174325466156
+[Training Epoch 16] Batch 4750, Loss 0.11725720763206482
+[Training Epoch 16] Batch 5000, Loss 0.11002303659915924
+[Training Epoch 16] Batch 5250, Loss 0.10944627225399017
+[Training Epoch 16] Batch 5500, Loss 0.12237611413002014
+[Training Epoch 16] Batch 5750, Loss 0.11759164929389954
+[Training Epoch 16] Batch 6000, Loss 0.10462059080600739
+[Training Epoch 16] Batch 6250, Loss 0.12607382237911224
+[Training Epoch 16] Batch 6500, Loss 0.11454270035028458
+[Training Epoch 16] Batch 6750, Loss 0.09761296212673187
+
+  0%|          | 0/5336 [00:00<?, ?it/s]
+ 14%|█▍        | 758/5336 [00:00<00:00, 7575.22it/s]
+ 29%|██▉       | 1536/5336 [00:00<00:00, 7693.49it/s]
+ 43%|████▎     | 2315/5336 [00:00<00:00, 7737.31it/s]
+ 58%|█████▊    | 3098/5336 [00:00<00:00, 7771.02it/s]
+ 73%|███████▎  | 3882/5336 [00:00<00:00, 7792.54it/s]
+ 87%|████████▋ | 4664/5336 [00:00<00:00, 7798.56it/s]
+100%|██████████| 5336/5336 [00:00<00:00, 7774.85it/s]
+Length of test_users: 55187
+Length of test_items: 55187
+Length of test_preds: 55187
+[Evluating Epoch 16] HR = 0.8473, NDCG = 0.5378
+>>> No improvement for 16 epoch(s), best HR = 0.8723 (epoch 0)
+Epoch 17 starts !
+--------------------------------------------------------------------------------
+[Training Epoch 17] Batch 0, Loss 0.08728671073913574
+[Training Epoch 17] Batch 250, Loss 0.11754164099693298
+[Training Epoch 17] Batch 500, Loss 0.10501222312450409
+[Training Epoch 17] Batch 750, Loss 0.08397743105888367
+[Training Epoch 17] Batch 1000, Loss 0.09593652188777924
+[Training Epoch 17] Batch 1250, Loss 0.08408505469560623
+[Training Epoch 17] Batch 1500, Loss 0.11057797819375992
+[Training Epoch 17] Batch 1750, Loss 0.10176658630371094
+[Training Epoch 17] Batch 2000, Loss 0.11680516600608826
+[Training Epoch 17] Batch 2250, Loss 0.1080455482006073
+[Training Epoch 17] Batch 2500, Loss 0.11661134660243988
+[Training Epoch 17] Batch 2750, Loss 0.12559232115745544
+[Training Epoch 17] Batch 3000, Loss 0.11668330430984497
+[Training Epoch 17] Batch 3250, Loss 0.08921677619218826
+[Training Epoch 17] Batch 3500, Loss 0.10515215992927551
+[Training Epoch 17] Batch 3750, Loss 0.09136272966861725
+[Training Epoch 17] Batch 4000, Loss 0.10649900883436203
+[Training Epoch 17] Batch 4250, Loss 0.12406865507364273
+[Training Epoch 17] Batch 4500, Loss 0.105088010430336
+[Training Epoch 17] Batch 4750, Loss 0.12322316318750381
+[Training Epoch 17] Batch 5000, Loss 0.12771856784820557
+[Training Epoch 17] Batch 5250, Loss 0.10564318299293518
+[Training Epoch 17] Batch 5500, Loss 0.11616250872612
+[Training Epoch 17] Batch 5750, Loss 0.10520865023136139
+[Training Epoch 17] Batch 6000, Loss 0.14654609560966492
+[Training Epoch 17] Batch 6250, Loss 0.09846080839633942
+[Training Epoch 17] Batch 6500, Loss 0.10534820705652237
+[Training Epoch 17] Batch 6750, Loss 0.10538533329963684
+
+  0%|          | 0/5336 [00:00<?, ?it/s]
+ 14%|█▍        | 761/5336 [00:00<00:00, 7607.14it/s]
+ 29%|██▉       | 1543/5336 [00:00<00:00, 7727.48it/s]
+ 43%|████▎     | 2316/5336 [00:00<00:00, 4819.68it/s]
+ 58%|█████▊    | 3094/5336 [00:00<00:00, 5673.72it/s]
+ 73%|███████▎  | 3876/5336 [00:00<00:00, 6299.23it/s]
+ 87%|████████▋ | 4660/5336 [00:00<00:00, 6751.10it/s]
+100%|██████████| 5336/5336 [00:00<00:00, 6516.46it/s]
+Length of test_users: 55187
+Length of test_items: 55187
+Length of test_preds: 55187
+[Evluating Epoch 17] HR = 0.8442, NDCG = 0.5361
+>>> No improvement for 17 epoch(s), best HR = 0.8723 (epoch 0)
+Epoch 18 starts !
+--------------------------------------------------------------------------------
+[Training Epoch 18] Batch 0, Loss 0.09396763145923615
+[Training Epoch 18] Batch 250, Loss 0.08178304135799408
+[Training Epoch 18] Batch 500, Loss 0.08735952526330948
+[Training Epoch 18] Batch 750, Loss 0.10984067618846893
+[Training Epoch 18] Batch 1000, Loss 0.10707003623247147
+[Training Epoch 18] Batch 1250, Loss 0.0915076732635498
+[Training Epoch 18] Batch 1500, Loss 0.11446994543075562
+[Training Epoch 18] Batch 1750, Loss 0.0909639298915863
+[Training Epoch 18] Batch 2000, Loss 0.10639558732509613
+[Training Epoch 18] Batch 2250, Loss 0.10251740366220474
+[Training Epoch 18] Batch 2500, Loss 0.1023201048374176
+[Training Epoch 18] Batch 2750, Loss 0.11649075150489807
+[Training Epoch 18] Batch 3000, Loss 0.0927480012178421
+[Training Epoch 18] Batch 3250, Loss 0.08744411170482635
+[Training Epoch 18] Batch 3500, Loss 0.11061560362577438
+[Training Epoch 18] Batch 3750, Loss 0.10659018158912659
+[Training Epoch 18] Batch 4000, Loss 0.10598429292440414
+[Training Epoch 18] Batch 4250, Loss 0.0985429435968399
+[Training Epoch 18] Batch 4500, Loss 0.10003532469272614
+[Training Epoch 18] Batch 4750, Loss 0.1103648990392685
+[Training Epoch 18] Batch 5000, Loss 0.11184795200824738
+[Training Epoch 18] Batch 5250, Loss 0.11327634751796722
+[Training Epoch 18] Batch 5500, Loss 0.107779860496521
+[Training Epoch 18] Batch 5750, Loss 0.12466533482074738
+[Training Epoch 18] Batch 6000, Loss 0.1061563789844513
+[Training Epoch 18] Batch 6250, Loss 0.115794837474823
+[Training Epoch 18] Batch 6500, Loss 0.10773808509111404
+[Training Epoch 18] Batch 6750, Loss 0.11156116425991058
+
+  0%|          | 0/5336 [00:00<?, ?it/s]
+ 14%|█▍        | 761/5336 [00:00<00:00, 7600.13it/s]
+ 29%|██▉       | 1543/5336 [00:00<00:00, 7726.29it/s]
+ 44%|████▎     | 2323/5336 [00:00<00:00, 7756.84it/s]
+ 58%|█████▊    | 3109/5336 [00:00<00:00, 7794.58it/s]
+ 73%|███████▎  | 3897/5336 [00:00<00:00, 7822.90it/s]
+ 88%|████████▊ | 4687/5336 [00:00<00:00, 7845.84it/s]
+100%|██████████| 5336/5336 [00:00<00:00, 7813.96it/s]
+Length of test_users: 55187
+Length of test_items: 55187
+Length of test_preds: 55187
+[Evluating Epoch 18] HR = 0.8427, NDCG = 0.5356
+>>> No improvement for 18 epoch(s), best HR = 0.8723 (epoch 0)
+Epoch 19 starts !
+--------------------------------------------------------------------------------
+[Training Epoch 19] Batch 0, Loss 0.08850818872451782
+[Training Epoch 19] Batch 250, Loss 0.10485199093818665
+[Training Epoch 19] Batch 500, Loss 0.12212540209293365
+[Training Epoch 19] Batch 750, Loss 0.12314516305923462
+[Training Epoch 19] Batch 1000, Loss 0.11199992150068283
+[Training Epoch 19] Batch 1250, Loss 0.09671145677566528
+[Training Epoch 19] Batch 1500, Loss 0.09953679889440536
+[Training Epoch 19] Batch 1750, Loss 0.08122903108596802
+[Training Epoch 19] Batch 2000, Loss 0.10159677267074585
+[Training Epoch 19] Batch 2250, Loss 0.09493150562047958
+[Training Epoch 19] Batch 2500, Loss 0.10955566167831421
+[Training Epoch 19] Batch 2750, Loss 0.10826358944177628
+[Training Epoch 19] Batch 3000, Loss 0.09935612231492996
+[Training Epoch 19] Batch 3250, Loss 0.1076214611530304
+[Training Epoch 19] Batch 3500, Loss 0.09264833480119705
+[Training Epoch 19] Batch 3750, Loss 0.10865683853626251
+[Training Epoch 19] Batch 4000, Loss 0.11660276353359222
+[Training Epoch 19] Batch 4250, Loss 0.11535362154245377
+[Training Epoch 19] Batch 4500, Loss 0.11374786496162415
+[Training Epoch 19] Batch 4750, Loss 0.10414527356624603
+[Training Epoch 19] Batch 5000, Loss 0.12013906240463257
+[Training Epoch 19] Batch 5250, Loss 0.11580365896224976
+[Training Epoch 19] Batch 5500, Loss 0.09797926247119904
+[Training Epoch 19] Batch 5750, Loss 0.11627543717622757
+[Training Epoch 19] Batch 6000, Loss 0.1207277774810791
+[Training Epoch 19] Batch 6250, Loss 0.10222051292657852
+[Training Epoch 19] Batch 6500, Loss 0.1000848114490509
+[Training Epoch 19] Batch 6750, Loss 0.09558986127376556
+
+  0%|          | 0/5336 [00:00<?, ?it/s]
+ 14%|█▍        | 759/5336 [00:00<00:00, 7584.84it/s]
+ 29%|██▉       | 1539/5336 [00:00<00:00, 7707.60it/s]
+ 44%|████▎     | 2323/5336 [00:00<00:00, 7766.94it/s]
+ 58%|█████▊    | 3111/5336 [00:00<00:00, 7807.97it/s]
+ 73%|███████▎  | 3896/5336 [00:00<00:00, 7821.29it/s]
+ 88%|████████▊ | 4680/5336 [00:00<00:00, 7826.92it/s]
+100%|██████████| 5336/5336 [00:00<00:00, 7799.37it/s]
+Length of test_users: 55187
+Length of test_items: 55187
+Length of test_preds: 55187
+[Evluating Epoch 19] HR = 0.8435, NDCG = 0.5352
+>>> No improvement for 19 epoch(s), best HR = 0.8723 (epoch 0)
+Epoch 20 starts !
+--------------------------------------------------------------------------------
+[Training Epoch 20] Batch 0, Loss 0.07382325828075409
+[Training Epoch 20] Batch 250, Loss 0.11278726905584335
+[Training Epoch 20] Batch 500, Loss 0.09289727360010147
+[Training Epoch 20] Batch 750, Loss 0.09618991613388062
+[Training Epoch 20] Batch 1000, Loss 0.10855128616094589
+[Training Epoch 20] Batch 1250, Loss 0.1199265718460083
+[Training Epoch 20] Batch 1500, Loss 0.11961863189935684
+[Training Epoch 20] Batch 1750, Loss 0.11171505600214005
+[Training Epoch 20] Batch 2000, Loss 0.1168743371963501
+[Training Epoch 20] Batch 2250, Loss 0.09178022295236588
+[Training Epoch 20] Batch 2500, Loss 0.10975509881973267
+[Training Epoch 20] Batch 2750, Loss 0.11025606095790863
+[Training Epoch 20] Batch 3000, Loss 0.07746940851211548
+[Training Epoch 20] Batch 3250, Loss 0.09381454437971115
+[Training Epoch 20] Batch 3500, Loss 0.10222873091697693
+[Training Epoch 20] Batch 3750, Loss 0.10205686837434769
+[Training Epoch 20] Batch 4000, Loss 0.1031399667263031
+[Training Epoch 20] Batch 4250, Loss 0.11468440294265747
+[Training Epoch 20] Batch 4500, Loss 0.10566495358943939
+[Training Epoch 20] Batch 4750, Loss 0.1314036250114441
+[Training Epoch 20] Batch 5000, Loss 0.09973902255296707
+[Training Epoch 20] Batch 5250, Loss 0.13015446066856384
+[Training Epoch 20] Batch 5500, Loss 0.13128425180912018
+[Training Epoch 20] Batch 5750, Loss 0.14127537608146667
+[Training Epoch 20] Batch 6000, Loss 0.09580167382955551
+[Training Epoch 20] Batch 6250, Loss 0.10513005405664444
+[Training Epoch 20] Batch 6500, Loss 0.11126315593719482
+[Training Epoch 20] Batch 6750, Loss 0.12228783965110779
+
+  0%|          | 0/5336 [00:00<?, ?it/s]
+ 14%|█▍        | 762/5336 [00:00<00:00, 7615.49it/s]
+ 29%|██▉       | 1543/5336 [00:00<00:00, 7728.89it/s]
+ 44%|████▎     | 2326/5336 [00:00<00:00, 7774.80it/s]
+ 58%|█████▊    | 3112/5336 [00:00<00:00, 7805.91it/s]
+ 73%|███████▎  | 3898/5336 [00:00<00:00, 7823.32it/s]
+ 88%|████████▊ | 4681/5336 [00:00<00:00, 7825.41it/s]
+100%|██████████| 5336/5336 [00:00<00:00, 7803.65it/s]
+Length of test_users: 55187
+Length of test_items: 55187
+Length of test_preds: 55187
+[Evluating Epoch 20] HR = 0.8430, NDCG = 0.5359
+>>> No improvement for 20 epoch(s), best HR = 0.8723 (epoch 0)
+Epoch 21 starts !
+--------------------------------------------------------------------------------
+[Training Epoch 21] Batch 0, Loss 0.10931612551212311
+[Training Epoch 21] Batch 250, Loss 0.103159099817276
+[Training Epoch 21] Batch 500, Loss 0.0894823670387268
+[Training Epoch 21] Batch 750, Loss 0.09519293904304504
+[Training Epoch 21] Batch 1000, Loss 0.0775885134935379
+[Training Epoch 21] Batch 1250, Loss 0.10391990840435028
+[Training Epoch 21] Batch 1500, Loss 0.10273290425539017
+[Training Epoch 21] Batch 1750, Loss 0.10072247684001923
+[Training Epoch 21] Batch 2000, Loss 0.1057698205113411
+[Training Epoch 21] Batch 2250, Loss 0.08090439438819885
+[Training Epoch 21] Batch 2500, Loss 0.11824939399957657
+[Training Epoch 21] Batch 2750, Loss 0.12373123317956924
+[Training Epoch 21] Batch 3000, Loss 0.11585137248039246
+[Training Epoch 21] Batch 3250, Loss 0.10315168648958206
+[Training Epoch 21] Batch 3500, Loss 0.1130918338894844
+[Training Epoch 21] Batch 3750, Loss 0.10731066018342972
+[Training Epoch 21] Batch 4000, Loss 0.09661153703927994
+[Training Epoch 21] Batch 4250, Loss 0.0953516960144043
+[Training Epoch 21] Batch 4500, Loss 0.10841164737939835
+[Training Epoch 21] Batch 4750, Loss 0.09835007786750793
+[Training Epoch 21] Batch 5000, Loss 0.10124967247247696
+[Training Epoch 21] Batch 5250, Loss 0.10810307413339615
+[Training Epoch 21] Batch 5500, Loss 0.12476341426372528
+[Training Epoch 21] Batch 5750, Loss 0.10602755844593048
+[Training Epoch 21] Batch 6000, Loss 0.09682809561491013
+[Training Epoch 21] Batch 6250, Loss 0.12498106807470322
+[Training Epoch 21] Batch 6500, Loss 0.11560733616352081
+[Training Epoch 21] Batch 6750, Loss 0.10568350553512573
+
+  0%|          | 0/5336 [00:00<?, ?it/s]
+ 14%|█▍        | 760/5336 [00:00<00:00, 7599.83it/s]
+ 29%|██▉       | 1543/5336 [00:00<00:00, 7731.08it/s]
+ 44%|████▎     | 2328/5336 [00:00<00:00, 7785.03it/s]
+ 58%|█████▊    | 3107/5336 [00:00<00:00, 5065.58it/s]
+ 73%|███████▎  | 3890/5336 [00:00<00:00, 5806.75it/s]
+ 88%|████████▊ | 4676/5336 [00:00<00:00, 6375.23it/s]
+100%|██████████| 5336/5336 [00:00<00:00, 6504.04it/s]
+Length of test_users: 55187
+Length of test_items: 55187
+Length of test_preds: 55187
+[Evluating Epoch 21] HR = 0.8413, NDCG = 0.5353
+>>> No improvement for 21 epoch(s), best HR = 0.8723 (epoch 0)
+================================================================================
+Early stopping at epoch 21. Best HR = 0.8723 at epoch 0
+================================================================================
+Training finished. Best HR = 0.8723 at epoch 0
