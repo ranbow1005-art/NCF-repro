@@ -50,7 +50,6 @@ class Engine(object):
             user, item, rating = batch[0], batch[1], batch[2]#data.py中__getitem__()所定义,batch[0/1/2]意味着取出整个批次中的user/item/rating数据，batch[0][0]才意味着该批user中的第一个
             rating = rating.float()
             loss = self.train_single_batch(user, item, rating)
-            #每训练250个batch打印一次
             if batch_id % 250 == 0:
                 print('[Training Epoch {}] Batch {}, Loss {}'.format(epoch_id, batch_id, loss))
             total_loss += loss
@@ -60,6 +59,7 @@ class Engine(object):
         assert hasattr(self, 'model'), 'Please specify the exact model !'
         self.model.eval()
         with torch.no_grad():
+            #获取测试样本
             test_users, test_items = evaluate_data[0], evaluate_data[1]
             negative_users, negative_items = evaluate_data[2], evaluate_data[3]
             if self.config['use_cuda'] is True:
@@ -68,23 +68,27 @@ class Engine(object):
                 negative_users = negative_users.cuda()
                 negative_items = negative_items.cuda()
 
-        if self.config['use_bachify_eval'] == False:    
+        if self.config['use_bachify_eval'] == False:
+            #不分批处理测试样本
             test_scores = self.model(test_users, test_items)
             negative_scores = self.model(negative_users, negative_items)
         else:
             test_scores = []
             negative_scores = []
             bs = self.config['batch_size']
+            #分批处理所有正样本
             for start_idx in range(0, len(test_users), bs):
-                end_idx = min(start_idx + bs, len(test_users))
+                end_idx = min(start_idx + bs, len(test_users))#min(..)防止最后一个batch超出长度
                 batch_test_users = test_users[start_idx:end_idx]
                 batch_test_items = test_items[start_idx:end_idx]
                 test_scores.append(self.model(batch_test_users, batch_test_items))
+            #分批处理所有负样本
             for start_idx in tqdm(range(0, len(negative_users), bs)):
                 end_idx = min(start_idx + bs, len(negative_users))
                 batch_negative_users = negative_users[start_idx:end_idx]
                 batch_negative_items = negative_items[start_idx:end_idx]
                 negative_scores.append(self.model(batch_negative_users, batch_negative_items))
+            #将for循环中test_scores存放的Batch批次个Tensor分数记录拼接为一个整的Tensor分数记录
             test_scores = torch.concatenate(test_scores, dim=0)
             negative_scores = torch.concatenate(negative_scores, dim=0)
 
@@ -96,6 +100,7 @@ class Engine(object):
                 negative_users = negative_users.cpu()
                 negative_items = negative_items.cpu()
                 negative_scores = negative_scores.cpu()
+            #通过分数进行排序后的大表
             self._metron.subjects = [test_users.data.view(-1).tolist(),
                                  test_items.data.view(-1).tolist(),
                                  test_scores.data.view(-1).tolist(),
@@ -107,7 +112,7 @@ class Engine(object):
         self._writer.add_scalar('performance/NDCG', ndcg, epoch_id)
         print('[Evluating Epoch {}] HR = {:.4f}, NDCG = {:.4f}'.format(epoch_id, hit_ratio, ndcg))
         return hit_ratio, ndcg
-
+    #checkpoints存储
     def save(self, alias, epoch_id, hit_ratio, ndcg):
         assert hasattr(self, 'model'), 'Please specify the exact model !'
         model_dir = self.config['model_dir'].format(alias, epoch_id, hit_ratio, ndcg)
