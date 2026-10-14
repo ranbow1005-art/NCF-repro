@@ -17,7 +17,7 @@ class GMF(torch.nn.Module):
         self.affine_output = torch.nn.Linear(in_features=self.latent_dim, out_features=1)
         self.logistic = torch.nn.Sigmoid()
 
-        # Initialize model parameters with a Gaussian distribution (with a mean of 0 and standard deviation of 0.01)
+        # 使用高斯分布初始化参数
         if config['weight_init_gaussian']:
             for sm in self.modules():
                 if isinstance(sm, (nn.Embedding, nn.Linear)):
@@ -27,7 +27,7 @@ class GMF(torch.nn.Module):
     def forward(self, user_indices, item_indices):
         user_embedding = self.embedding_user(user_indices)
         item_embedding = self.embedding_item(item_indices)
-        element_product = torch.mul(user_embedding, item_embedding)
+        element_product = torch.mul(user_embedding, item_embedding)#向量逐位相乘，输出同样维度的结果向量
         logits = self.affine_output(element_product)
         rating = self.logistic(logits)
         return rating

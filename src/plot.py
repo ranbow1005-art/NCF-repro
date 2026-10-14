@@ -9,7 +9,7 @@ import numpy as np
 factors = [8, 16, 32, 64]
 
 data = {
-    "MovieLens": {
+    "MovieLens(Pretrain)": {
         "paper": {
             "HR": {
                 "GMF":   [0.643, 0.692, 0.712, 0.705],
@@ -260,12 +260,12 @@ def plot_dataset_paper_vs_ours(dataset_name, save_path):
 # =========================================================
 
 plot_dataset_ours_only(
-    dataset_name="MovieLens",
+    dataset_name="MovieLens(Pretrain)",
     save_path="movielens_ours_only.png"
 )
 
 plot_dataset_paper_vs_ours(
-    dataset_name="MovieLens",
+    dataset_name="MovieLens(Pretrain)",
     save_path="movielens_paper_vs_ours.png"
 )
 
@@ -277,4 +277,55 @@ plot_dataset_ours_only(
 plot_dataset_paper_vs_ours(
     dataset_name="Pinterest",
     save_path="pinterest_paper_vs_ours.png"
+)
+
+# =========================================================
+# 5.MovieLens 无预训练（No Pretrain）：Paper vs Ours
+#    保留前面的原始数据、绘图函数以及四张已有图片
+# =========================================================
+
+# 这里创建独立的数据集配置，不覆盖上面原有的 MovieLens 数据
+data["MovieLens(No Pretrain)"] = {
+    "paper": {
+        "HR": {
+            "GMF":   [0.643, 0.692, 0.712, 0.705],
+            "MLP":   [0.671, 0.684, 0.692, 0.702],
+            "NeuMF": [0.688, 0.696, 0.701, 0.705],
+        },
+        "NDCG": {
+            "GMF":   [0.372, 0.416, 0.435, 0.427],
+            "MLP":   [0.399, 0.410, 0.425, 0.426],
+            "NeuMF": [0.410, 0.420, 0.425, 0.426],
+        }
+    },
+    "ours": {
+        "HR": {
+            "GMF":   [0.643, 0.691, 0.707, 0.708],
+            "MLP":   [0.658, 0.673, 0.695, 0.696],
+            "NeuMF": [0.685, 0.698, 0.705, 0.708],
+        },
+        "NDCG": {
+            "GMF":   [0.368, 0.412, 0.431, 0.432],
+            "MLP":   [0.380, 0.399, 0.419, 0.420],
+            "NeuMF": [0.409, 0.421, 0.434, 0.437],
+        }
+    },
+
+    # 保持与原 MovieLens 图相同的坐标范围，便于横向比较
+    "ylim": {
+        "HR":   (0.55, 0.75),
+        "NDCG": (0.30, 0.46)
+    },
+
+    "yticks": {
+        "HR":   [0.55, 0.60, 0.65, 0.70, 0.75],
+        "NDCG": [0.30, 0.34, 0.38, 0.42, 0.46]
+    }
+}
+
+# 复用原有函数：蓝色 Paper、红色 Ours
+# 左图 HR@10，右图 NDCG@10
+plot_dataset_paper_vs_ours(
+    dataset_name="MovieLens(No Pretrain)",
+    save_path="movielens_nopretrain_paper_vs_ours.png"
 )

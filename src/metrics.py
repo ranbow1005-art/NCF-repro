@@ -32,7 +32,7 @@ class MetronAtK(object):
         print(f"Length of test_users: {len(test_users)}")
         print(f"Length of test_items: {len(test_items)}")
         print(f"Length of test_preds: {len(test_scores)}")
-        # 正样本表设置
+        # 测试正样本表设置
         test = pd.DataFrame({'user': test_users,
                              'test_item': test_items,
                              'test_score': test_scores})
@@ -40,7 +40,7 @@ class MetronAtK(object):
         full = pd.DataFrame({'user': neg_users + test_users,
                             'item': neg_items + test_items,
                             'score': neg_scores + test_scores})
-        #将test表与full表以user进行合并，标识正样本item，用于后续计算
+        #将test表与full表以user进行合并，标识正样本item，用于后续排序
         full = pd.merge(full, test, on=['user'], how='left')
         # 每个用户的样本实例按照score进行排序，以便找寻top-k
         full['rank'] = full.groupby('user')['score'].rank(method='first', ascending=False)

@@ -19,19 +19,25 @@ class Engine(object):
         self._writer.add_text('config', str(config), 0)
         self.opt = use_optimizer(self.model, config)
         # explicit feedback
-        # self.crit = torch.nn.MSELoss()
+        # self.crit = torch.nn.MSELoss()#平方误差损失，常用于连续值预测
         # implicit feedback
-        self.crit = torch.nn.BCELoss()
+        self.crit = torch.nn.BCELoss()#二元交叉熵损失
 
     def train_single_batch(self, users, items, ratings):
         assert hasattr(self, 'model'), 'Please specify the exact model !'
         if self.config['use_cuda'] is True:
-            users, items, ratings = users.cuda(), items.cuda(), ratings.cuda()
+            users, items, ratings = users.cuda(), items.cuda(), ratings.cuda()#将Tensor变量从CPU移动到GPU进行计算，不改变变量类型
+        #清除旧梯度
         self.opt.zero_grad()
+        #前向传播
         ratings_pred = self.model(users, items)
-        loss = self.crit(ratings_pred.view(-1), ratings)
+        #损失计算
+        loss = self.crit(ratings_pred.view(-1), ratings)#ratings_pred.view(-1):调整ratings_pred形状，如从ratings_pred = tensor([[0.85], [0.23]])调整为tensor([0.85, 0.23])。对齐真实标签ratings形状，便于损失计算
+        #反向传播，计算梯度
         loss.backward()
+        #真正更新参数的部分。此处根据模型和配置创建的优化器实现参数更新
         self.opt.step()
+        #loss = self.crit(..)得到的是一个数值标量Tensor，loss.item()将其转换为普通Python数值
         loss = loss.item()
         return loss
 
@@ -41,9 +47,10 @@ class Engine(object):
         total_loss = 0
         for batch_id, batch in enumerate(train_loader):
             assert isinstance(batch[0], torch.LongTensor)
-            user, item, rating = batch[0], batch[1], batch[2]
+            user, item, rating = batch[0], batch[1], batch[2]#data.py中__getitem__()所定义,batch[0/1/2]意味着取出整个批次中的user/item/rating数据，batch[0][0]才意味着该批user中的第一个
             rating = rating.float()
             loss = self.train_single_batch(user, item, rating)
+            #每训练250个batch打印一次
             if batch_id % 250 == 0:
                 print('[Training Epoch {}] Batch {}, Loss {}'.format(epoch_id, batch_id, loss))
             total_loss += loss

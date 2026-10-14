@@ -15,6 +15,7 @@ class NeuMF(torch.nn.Module):
         self.latent_dim_mf = config['latent_dim_mf']
         self.latent_dim_mlp = config['latent_dim_mlp']
 
+        #可以看到NeuMF中对mlp、gmf中的嵌入向量转化是分别进行的
         self.embedding_user_mlp = torch.nn.Embedding(num_embeddings=self.num_users, embedding_dim=self.latent_dim_mlp)
         self.embedding_item_mlp = torch.nn.Embedding(num_embeddings=self.num_items, embedding_dim=self.latent_dim_mlp)
         self.embedding_user_mf = torch.nn.Embedding(num_embeddings=self.num_users, embedding_dim=self.latent_dim_mf)
@@ -41,12 +42,13 @@ class NeuMF(torch.nn.Module):
         item_embedding_mf = self.embedding_item_mf(item_indices)
 
         mlp_vector = torch.cat([user_embedding_mlp, item_embedding_mlp], dim=-1)  # the concat latent vector
+        #mf部分处理
         mf_vector =torch.mul(user_embedding_mf, item_embedding_mf)
-
+        #mlp部分处理
         for idx, _ in enumerate(range(len(self.fc_layers))):
             mlp_vector = self.fc_layers[idx](mlp_vector)
             mlp_vector = torch.nn.ReLU()(mlp_vector)
-
+        #直接拼接mlp_vector, mf_vector
         vector = torch.cat([mlp_vector, mf_vector], dim=-1)
         logits = self.affine_output(vector)
         rating = self.logistic(logits)
@@ -58,10 +60,12 @@ class NeuMF(torch.nn.Module):
     def load_pretrain_weights(self):
         """Loading weights from trained MLP model & GMF model"""
         config = self.config
+        #处理MLP预训练数据
         config['latent_dim'] = config['latent_dim_mlp']
         mlp_model = MLP(config)
         if config['use_cuda'] is True:
             mlp_model.cuda()
+        #读取训练后生成的checkpoint文件获取模型参数
         resume_checkpoint(mlp_model, model_dir=config['pretrain_mlp'], device_id=config['device_id'])
 
         self.embedding_user_mlp.weight.data = mlp_model.embedding_user.weight.data
@@ -69,6 +73,7 @@ class NeuMF(torch.nn.Module):
         for idx in range(len(self.fc_layers)):
             self.fc_layers[idx].weight.data = mlp_model.fc_layers[idx].weight.data
 
+        #处理GMF预训练数据
         config['latent_dim'] = config['latent_dim_mf']
         gmf_model = GMF(config)
         if config['use_cuda'] is True:
@@ -77,6 +82,8 @@ class NeuMF(torch.nn.Module):
         self.embedding_user_mf.weight.data = gmf_model.embedding_user.weight.data
         self.embedding_item_mf.weight.data = gmf_model.embedding_item.weight.data
 
+        #初始化NeuMF的输出层参数
+        #此处是直接将MLP和GMF的权重和偏置拼接和叠加作为NeuMF输出层的权重和偏置，并且融合系数相等（不代表MLP和GMF在NCF中的贡献始终固定为1:1，模型学习中会自行优化
         self.affine_output.weight.data = 0.5 * torch.cat([mlp_model.affine_output.weight.data, gmf_model.affine_output.weight.data], dim=-1)
         self.affine_output.bias.data = 0.5 * (mlp_model.affine_output.bias.data + gmf_model.affine_output.bias.data)
 

@@ -54,7 +54,7 @@ class SampleGenerator(object):
         self.train_ratings, self.test_ratings = self._split_loo(self.preprocess_ratings)
 
     def _normalize(self, ratings):
-        """显式反馈处理：归一化，将rating由原来的[0,max_rating]放缩到[0,1]间"""
+        """显式反馈处理：归一化，将rating由原来的[0,max_rating]二值化到0或1上"""
         ratings = deepcopy(ratings)
         max_rating = ratings.rating.max()
         ratings['rating'] = ratings.rating * 1.0 / max_rating
@@ -108,6 +108,13 @@ class SampleGenerator(object):
 
         #这里只需要保存用户已经交互的item和测试负样本
         return interact_status[['userId', 'interacted_items', 'negative_samples']]
+        # """return all negative items & 100 sampled negative items"""
+        # interact_status = ratings.groupby('userId')['itemId'].apply(set).reset_index().rename(
+        #     columns={'itemId': 'interacted_items'})
+        # interact_status['negative_items'] = interact_status['interacted_items'].apply(lambda x: self.item_pool - x)
+        # interact_status['negative_samples'] = interact_status['negative_items'].apply(
+        #     lambda x: random.sample(list(x), 99))
+        # return interact_status[['userId', 'negative_items', 'negative_samples']]
 
     def instance_a_train_loader(self, num_negatives, batch_size):
         """instance train loader for one training epoch
@@ -118,10 +125,11 @@ class SampleGenerator(object):
 
         #原来合并的是negative_items完整负样本池
         #train_ratings = pd.merge(self.train_ratings, self.negatives[['userId', 'negative_items']], on='userId')
-        #现在只合并该用户真正交互过的interacted_items集合
+        #现在只合并每个用户真正交互过的interacted_items集合
         train_ratings = pd.merge(self.train_ratings,self.negatives[['userId', 'interacted_items']],on='userId')
 
         #每一条正样本直接通过拒绝采样生成num_negatives个负样本
+        #此处的interacted_items是绑定了userID的
         train_ratings['negatives'] = train_ratings['interacted_items'].apply(
             lambda x: self._rejection_sample(x, num_negatives)
         )
@@ -140,6 +148,7 @@ class SampleGenerator(object):
         dataset = UserItemRatingDataset(user_tensor=torch.LongTensor(users),
                                         item_tensor=torch.LongTensor(items),
                                         target_tensor=torch.FloatTensor(ratings))
+        #DataLoader(..)自动将dataset按照batch_size进行分组，因此在engine中可以直接在一个epoch中直接获取每个batch
         return DataLoader(dataset, batch_size=batch_size,shuffle=True,num_workers=4,pin_memory=True)  #num_worker原来为默认0
 
     @property
@@ -147,6 +156,7 @@ class SampleGenerator(object):
         """评估样本构建"""
         #合并测试正样本和固定负样本
         test_ratings = pd.merge(self.test_ratings,self.negatives[['userId', 'negative_samples']],on='userId')
+        #将Pandas DataFrame转换成PyTorch更容易处理的格式
         test_users, test_items, negative_users, negative_items = [], [], [], []
         for row in test_ratings.itertuples():
             #遍历每个用户的一个测试正样本

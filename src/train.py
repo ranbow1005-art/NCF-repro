@@ -53,16 +53,19 @@ def mytrain(dim,model,dataset):
         #------------------------------------------------------------------------
     data_tag='ml' if global_dataset==0 else 'pin'
     #model config
-    gmf_config = {'alias': f'{data_tag}_gmf_factor{global_latent_dim}neg4',
+    gmf_config = {'alias': f'{data_tag}_gmf_factor{global_latent_dim}neg4',#模型名称标识
                 'num_epoch': global_epoch,#原200
                 'batch_size': 1024,
+                  #sgd
                 # 'optimizer': 'sgd',
                 # 'sgd_lr': 1e-3,
-                # 'sgd_momentum': 0.9,
-                # 'optimizer': 'rmsprop',
+                # 'sgd_momentum': 0.9,#SGD动量：利用历史更新方向，有助于减轻震荡
+                  #RMSprop
+                # 'optimizer': 'rmsprop',#RMSprop：核心机制是跟踪梯度平方的移动平均，能自适应缩放参数更新
                 # 'rmsprop_lr': 1e-3,
-                # 'rmsprop_alpha': 0.99,
-                # 'rmsprop_momentum': 0,
+                # 'rmsprop_alpha': 0.99,#梯度平方移动平均的衰减系数
+                # 'rmsprop_momentum': 0,#RMSprop的动量系数，控制RMSprop是否额外使用动量机制
+                  #adam
                 'optimizer': 'adam',
                 'adam_lr': 1e-3,
                 'num_users':num_users,
@@ -70,7 +73,7 @@ def mytrain(dim,model,dataset):
                 'latent_dim': global_latent_dim,
                 'num_negative': 4,
                 'l2_regularization': 0,  # 0.01
-                'weight_init_gaussian': True,
+                'weight_init_gaussian': True,#是否使用高斯分布初始化权重
                 'use_cuda': True,
                 'use_bachify_eval': True,#原False
                 'device_id': 0,
@@ -85,7 +88,7 @@ def mytrain(dim,model,dataset):
                 'num_items':num_items,
                 'latent_dim': global_latent_dim,
                 'num_negative': 4,
-                'layers': [global_latent_dim*2, 64, 32, 16, 8],  # layers[0] is the concat of latent user vector & latent item vector
+                'layers': [global_latent_dim*2, 64, 32, 16, 8],  # 第一层是UserID Embedding和ItemID Embedding的拼接
                 'l2_regularization': 0.0000001,  # MLP model is sensitive to hyper params
                 'weight_init_gaussian': True,
                 'use_cuda': True,

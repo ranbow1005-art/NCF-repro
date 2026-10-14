@@ -12,7 +12,7 @@ def save_checkpoint(model, model_dir):
         os.makedirs(dir)
     torch.save(model.state_dict(), model_dir)
 
-
+#读取checkpoints
 def resume_checkpoint(model, model_dir, device_id):
     state_dict = torch.load(model_dir,
                             map_location=lambda storage, loc: storage.cuda(device=device_id))  # ensure all storage are on gpu

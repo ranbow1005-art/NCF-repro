@@ -16,10 +16,12 @@ class MLP(torch.nn.Module):
         self.embedding_user = torch.nn.Embedding(num_embeddings=self.num_users, embedding_dim=self.latent_dim)
         self.embedding_item = torch.nn.Embedding(num_embeddings=self.num_items, embedding_dim=self.latent_dim)
 
+        #MLP模型设定
+        #全连接线性层
         self.fc_layers = torch.nn.ModuleList()
         for idx, (in_size, out_size) in enumerate(zip(config['layers'][:-1], config['layers'][1:])):
             self.fc_layers.append(torch.nn.Linear(in_size, out_size))
-
+        #输出层
         self.affine_output = torch.nn.Linear(in_features=config['layers'][-1], out_features=1)
         self.logistic = torch.nn.Sigmoid()
 
@@ -33,8 +35,9 @@ class MLP(torch.nn.Module):
     def forward(self, user_indices, item_indices):
         user_embedding = self.embedding_user(user_indices)
         item_embedding = self.embedding_item(item_indices)
-        vector = torch.cat([user_embedding, item_embedding], dim=-1)  # the concat latent vector
+        vector = torch.cat([user_embedding, item_embedding], dim=-1)  # 拼接user与item嵌入向量
         for idx, _ in enumerate(range(len(self.fc_layers))):
+            #每层中间层经过线性计算后再经过非线性激活
             vector = self.fc_layers[idx](vector)
             vector = torch.nn.ReLU()(vector)
             # vector = torch.nn.BatchNorm1d()(vector)
@@ -48,6 +51,7 @@ class MLP(torch.nn.Module):
 
     def load_pretrain_weights(self):
         """Loading weights from trained GMF model"""
+        #可以将GMF训练好的user、item Embedding对应权重参数迁移到MLP中
         config = self.config
         gmf_model = GMF(config)
         if config['use_cuda'] is True:
